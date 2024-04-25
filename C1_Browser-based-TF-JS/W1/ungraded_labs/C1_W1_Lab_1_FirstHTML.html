@@ -1,25 +1,26 @@
 <html>
-<head></head>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
-    <script lang="js">
-        // Define the model for the linear regression.
-        const model = tf.sequential();
-        model.add(tf.layers.dense({units: 1, inputShape: [1]}));
-        model.compile({loss:'meanSquaredError', optimizer:'sgd'});
+  <head></head>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <script lang="js">
+    // Define the model for the linear regression.
+    const model = tf.sequential();
+    model.add(tf.layers.dense({units: 1, inputShape: [1]}));
+    model.compile({loss:'meanSquaredError', optimizer:'sgd'});
 
-        // Print model summary
-        model.summary();
+    // Print model summary
+    model.summary();
 
-        // Define input data.
-        const inputTensor = tf.tensor2d([-1.0, 0.0, 1.0, 2.0, 3.0, 4.0], [6, 1]);
+    // Define input data.
+    const inputTensor = tf.tensor2d([-1.0, 0.0, 1.0, 2.0, 3.0, 4.0], [6, 1]);
 
-        // Define output data.
-        const outputTensor = tf.tensor2d([-3.0, -1.0, 2.0, 3.0, 5.0, 7.0], [6, 1]);
+    // Define output data.
+    const outputTensor = tf.tensor2d([-3.0, -1.0, 2.0, 3.0, 5.0, 7.0], [6, 1]);
 
-        // Train the model using the data.
-        async function trainModel(model, inputTensor, outputTensor) {
-            const history = await model.fit(inputTensor, outputTensor, 
-            { 
+    // Train the model using the data.
+    async function trainModel(model, inputTensor, outputTensor) {
+        try {
+            const history = await model.fit(inputTensor, outputTensor,
+            {
                 epochs: 500,
                 callbacks: {
                     onEpochEnd: async (epoch, logs) => {
@@ -28,13 +29,17 @@
                 }
             });
         }
+        catch (error) {
+            console.error(error);
+        }
+    }
 
-        // Train the model and make a prediction.
-        trainModel(model, inputTensor, outputTensor).then(() => {
-            alert(model.predict(tf.tensor2d([10], [1,1])));
-        });
-    </script>
-<body>
+    // Train the model and make a prediction.
+    trainModel(model, inputTensor, outputTensor).then(() => {
+        alert(model.predict(tf.tensor2d([10], [1,1])));
+    });
+  </script>
+  <body>
     <h1>First HTML Page</h1>
-</body>
+  </body>
 </html>
