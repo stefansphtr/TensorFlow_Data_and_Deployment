@@ -7,7 +7,13 @@ find . -type d -name "data" | while read dir; do
 
   # Check if size is greater than 10MB (10240 KB)
   if [ $dir_size -gt 10240 ]; then
-    # Add directory to .gitignore, prepending with "/" to make it relative to the project root
-    echo "/${dir#./}" >> .gitignore
+    # Prepare the path to be added to .gitignore
+    ignore_path="/${dir#./}"
+
+    # Check if the path is already in .gitignore
+    if ! grep -Fxq "$ignore_path" .gitignore; then
+      # If not, add it
+      echo "$ignore_path" >> .gitignore
+    fi
   fi
 done
