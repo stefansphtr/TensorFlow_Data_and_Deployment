@@ -1,7 +1,16 @@
 #!/bin/bash
 
-# Find all directories named "data"
-find . -type d -name "data" | while read dir; do
+# Check if directory argument was provided
+if [ $# -eq 0 ]; then
+  echo "No directory provided. Usage: ./check_data_size.sh <directory>"
+  exit 1
+fi
+
+# Define the directory to check
+dir_to_check=$1
+
+# Find all directories within the specified directory
+find "$dir_to_check" -type d | while read dir; do
   # Get size of directory in KB
   dir_size=$(du -sk "$dir" | cut -f1)
 
