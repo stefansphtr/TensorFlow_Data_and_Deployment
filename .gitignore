@@ -1,4 +1,7 @@
-/C1_Browser-based-TF-JS/W3/assignment/data
-.idea/
 *.gradle/
 *.properties
+.idea/
+/C1_Browser-based-TF-JS/W3/assignment/data
+/C2_Device-based-TF-lite/W3/ungraded_labs/ios_apps/cats_vs_dogs/Pods/TensorFlowLiteC/Frameworks/TensorFlowLiteC.framework
+/C2_Device-based-TF-lite/W3/ungraded_labs/ios_apps/image_classification/Pods/TensorFlowLiteC/Frameworks/TensorFlowLiteC.framework
+/C2_Device-based-TF-lite/W3/ungraded_labs/ios_apps/object_detection/Pods/TensorFlowLiteC/Frameworks/TensorFlowLiteC.framework
