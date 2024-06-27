@@ -1,3 +1,15 @@
+<p align="center">
+  <a href="#">
+    <img src="https://badges.pufler.dev/visits/stefansphtr/TensorFlow_Data_and_Deployment" alt="Visits Badge">
+    <img src="https://badges.pufler.dev/updated/stefansphtr/TensorFlow_Data_and_Deployment" alt="Updated Badge">
+    <img src="https://badges.pufler.dev/created/stefansphtr/TensorFlow_Data_and_Deployment" alt="Created Badge">
+    <img src="https://img.shields.io/github/contributors/stefansphtr/TensorFlow_Data_and_Deployment" alt="Contributors Badge">
+    <img src="https://img.shields.io/github/last-commit/stefansphtr/TensorFlow_Data_and_Deployment" alt="Last Commit Badge">
+    <img src="https://img.shields.io/github/commit-activity/m/stefansphtr/TensorFlow_Data_and_Deployment" alt="Commit Activity Badge">
+    <img src="https://img.shields.io/github/repo-size/stefansphtr/TensorFlow_Data_and_Deployment" alt="Repo Size Badge">
+  </a>
+</p>
+
 # TensorFlow: Data and Deployment Specialization
 
 This repository contains the code for the course "TensorFlow: Data and Deployment Specialization" offered by [DeepLearning.AI](https://www.deeplearning.ai/). The course is available on [Coursera](https://www.coursera.org/specializations/tensorflow-data-and-deployment).
